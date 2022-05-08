@@ -1,0 +1,297 @@
+{% extends 'bases.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block add_commande %}
+<a href="/listes_commande" class="p-2 text-orange-400 "> Liste commande</a>
+{% endblock add_commande %}
+
+
+{% block content %}
+<h1 class="text-center text-orange-400">{{title}}</h1>
+
+<div class="   shadow-2xl rounded-full">
+    <div class=" flex flex-row ">
+        <br>
+        <form action="" method="POST" autocomplete="off" class=" shadow-xl ">
+            {% csrf_token %}
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="flex flex-row items-center gap-1 w-[100%]  ml-3 mr-3 ">
+                    <div class="w-[50%] ">
+                        {{ form.nom|as_crispy_field }}
+                        {{ form.phone|as_crispy_field }}
+
+
+
+
+                    </div>
+                    <div class="w-[50%]">
+                        {{ form.numero_commande|as_crispy_field }}
+                        {{ form.date_commande|as_crispy_field}}
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="grid grid-cols-4 items-center gap-1 w-full ml-3 mr-3 ">
+
+                    <div class="w-full">
+                        {{ form.ligne_un|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_un_qte|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_un_prix_unitaire|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_un_prix_total|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="grid grid-cols-4 items-center gap-1 w-full ml-3 mr-3 ">
+
+                    <div class="w-full">
+                        {{ form.ligne_deux|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_deux_qte|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_deux_prix_unitaire|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_deux_prix_total|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="grid grid-cols-4 items-center gap-1 w-full ml-3 mr-3 ">
+
+                    <div class="w-full">
+                        {{ form.ligne_trois|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_trois_qte|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_trois_prix_unitaire|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_trois_prix_total|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="grid grid-cols-4 items-center gap-1 w-full ml-3 mr-3 ">
+
+                    <div class="w-full">
+                        {{ form.ligne_quatre|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_quatre_qte|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_quatre_prix_unitaire|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_quatre_prix_total|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="grid grid-cols-4 items-center gap-1 w-full ml-3 mr-3 ">
+
+                    <div class="w-full">
+                        {{ form.ligne_cinq|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_cinq_qte|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_cinq_prix_unitaire|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_cinq_prix_total|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="grid grid-cols-4 items-center gap-1 w-full ml-3 mr-3 ">
+
+                    <div class="w-full">
+                        {{ form.ligne_six|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_six_qte|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_six_prix_unitaire|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_six_prix_total|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="grid grid-cols-4 items-center gap-1 w-full ml-3 mr-3 ">
+
+                    <div class="w-full">
+                        {{ form.ligne_sept|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_sept_qte|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_sept_prix_unitaire|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_sept_prix_total|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="grid grid-cols-4 items-center gap-1 w-full ml-3 mr-3 ">
+
+                    <div class="w-full">
+                        {{ form.ligne_huit|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_huit_qte|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_huit_prix_unitaire|as_crispy_field }}
+                    </div>
+
+                    <div class="w-[100%]">
+                        {{ form.ligne_huit_prix_total|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="flex flex-row justify-between  rounded-sm">
+                <div class="flex flex-row items-center gap-1 w-[100%] ml-3 mr-3 ">
+                    <div class="w-[30%]">
+                        {{ form.type_commande|as_crispy_field }}
+                    </div>
+                    <div class="w-[100%] text-center">
+                        {{ form.total|as_crispy_field }}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="  flex m-4">
+                <button class="plus_ligne  bg-blue-700 mx-auto text-center mr-6 h-10 w-[30%]  mt-6 rounded-md"
+                    type="button">
+                    Afficher/cacher plus de lignes
+                </button>
+                {% block btn_add %}
+                <button type="submit" class="btn align-center bg-blue-700 h-10 w-[10%] 
+                        mt-6 rounded-md">Ajouter
+                </button>
+                {% endblock btn_add %}
+
+            </div>
+            <br><br>
+        </form>
+
+
+
+        <div class=" mx-auto shadow-md w-[20%] text-center">
+            {% block recente_commande %}
+
+            <span class=" text-orange-600"> Commandes récentes</span>
+
+            <span class=" qte bg-slate-500 text-white px-2 py-0.5 rounded-full "> {{ commande_total }} </span><br>
+            {% endblock recente_commande %}
+
+            <br>
+            {% for commande in queryset %}
+            <div class=" shadow-sm">
+                <div> Nom: {{ commande.nom }} </div>
+                <div> {{ commande.date_commande }} </div>
+                <div> {{ commande.date_commande }} </div>
+                <div> <span class="text-slate-400">Total</span>:&nbsp;$ {{ commande.total }} </div>
+            </div>
+            <br>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+    <br>
+</div>
+
+{% endblock %}
+<br>

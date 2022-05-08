@@ -1,0 +1,127 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'js/jquery-ui-1.13.1/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/jquery-ui-1.13.1/jquery-ui.structure.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/jquery-ui-1.13.1/jquery-ui.theme.min.css' %}">
+
+
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui-1.13.1/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/pager/paging.js' %}"></script>
+
+
+    {% tailwind_css %}
+
+
+
+
+
+</head>
+
+<body>
+    <div>
+        <div class="  h-screen">
+            <header class=" flex justify-between bg-black text-white text-base md:text-3xl lg:text-lg">
+
+                {% block header %}
+                <h1 class="mt-2 pl-2 text-orange-400">Systeme de gestion commande</h1>
+                {% endblock header %}
+                <img src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt="">
+
+                {% block navbar %}
+                <img src="" alt=""> <img src="" alt="">
+
+                <nav class="grid grid-cols-3   ">
+
+                    {% if request.user.is_authenticated %}
+                    <a href="/accounts/logout" class="p-2 text-orange-400 "> {{user}} | logout</a>
+                    {% block add_commande %}
+                    <a href="/add_commande" class="p-2 text-orange-400 "> Ajout commande</a>
+                    {% endblock add_commande %}
+
+                    {% else %}
+                    <a href="/accounts/login" class="p-2 text-orange-400 "> login</a>
+                    {% endif %}
+
+
+
+
+
+
+                    <ul class=" hidden  myMenu bg-slate-400 w-full">
+                        <li class="bg-red-700"><a href="">A</a></li>
+                        <li><a href="">B Lorem ipsum dolor sit amet.</a></li>
+                        <li><a href="">C</a></li>
+                    </ul>
+                </nav>
+                {% endblock navbar %}
+
+                <button class=" text-orange-400 mr-4 " onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7">
+                        </path>
+                    </svg>
+                </button>
+
+            </header>
+
+            <!--Block Content-->
+            {% block content %}
+
+            {% endblock content %}
+
+
+            <br>
+            {% block footer %}
+            <footer>
+                <div class=" flex justify-center bg-black text-white text-base md:text-3xl lg:text-lg">
+                    &copy; {% now "Y" %} Copyright:
+                    <a href="">
+                        <span class="text-white">&nbsp; www.website.com</span>
+                    </a>
+                </div>
+            </footer>
+            {% endblock footer %}
+
+
+
+        </div>
+
+
+
+        <!-- jquery-->
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+        <!-- jquery input mask-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8-beta.17/jquery.inputmask.min.js"
+            integrity="sha512-zdfH1XdRONkxXKLQxCI2Ak3c9wNymTiPh5cU4OsUavFDATDbUzLR+SYWWz0RkhDmBDT0gNSUe4xrQXx8D89JIQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+
+        <script src="/build/jquery.datetimepicker.full.min.js"></script>
+
+        <!-- suitalert (backend)-->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <!-- static js-->
+
+        <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
